@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ControllerMain">
+  <children>
+    <TabPane layoutX="0.0" layoutY="0.0" prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="quản lý hộ dân cư">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="list" layoutX="34.0" layoutY="65.0" mnemonicParsing="false" onAction="#presslist" prefHeight="27.0" prefWidth="113.0" text="Danh sách" textAlignment="CENTER" underline="false">
+                  <font>
+                    <Font size="15.0" />
+                  </font>
+                </Button>
+                <Button fx:id="add" layoutX="34.0" layoutY="128.0" mnemonicParsing="false" onAction="#setAdd" prefWidth="113.0" text="Thêm" />
+                <Button fx:id="fix" layoutX="34.0" layoutY="199.0" mnemonicParsing="false" onAction="#setFix" prefWidth="113.0" text="Sửa" />
+                <Button fx:id="delete" layoutX="34.0" layoutY="270.0" mnemonicParsing="false" onAction="#setDelete" prefWidth="113.0" text="Xoá" />
+                <ListView fx:id="showList" disable="false" layoutX="167.0" layoutY="65.0" prefHeight="354.0" prefWidth="493.0" visible="true" />
+                <TextField fx:id="CustomerNumber" disable="false" editable="true" focusTraversable="true" layoutX="167.0" layoutY="17.0" prefHeight="27.0" prefWidth="504.0" promptText="CustomerNumber" visible="true" />
+                <TextField fx:id="CustomerName" disable="false" focusTraversable="true" layoutX="167.0" layoutY="57.0" prefHeight="27.0" prefWidth="519.0" promptText="CustomerName" visible="true" />
+                <TextField fx:id="IdCardName" disable="false" layoutX="167.0" layoutY="97.0" prefWidth="519.0" promptText="IdCardName" visible="true" />
+                <TextField fx:id="Gender" disable="false" layoutX="167.0" layoutY="137.0" prefWidth="519.0" promptText="Gender" visible="true" />
+                <TextField fx:id="Phone" disable="false" layoutX="167.0" layoutY="177.0" prefWidth="519.0" promptText="Phone" visible="true" />
+                <TextField fx:id="Address" disable="false" layoutX="167.0" layoutY="217.0" prefWidth="519.0" promptText="Address" visible="true" />
+                <TextField fx:id="Birthday" disable="false" layoutX="167.0" layoutY="257.0" prefWidth="519.0" promptText="Birthday year-month-day (0000-00-00)" visible="true" />
+                <TextField fx:id="StartDay" disable="false" layoutX="167.0" layoutY="297.0" prefWidth="519.0" promptText="StartDay year-month-day (0000-00-00)" visible="true" />
+                <TextField fx:id="Type" disable="false" layoutX="167.0" layoutY="337.0" prefWidth="519.0" promptText="Type" visible="true" />
+                <Button fx:id="done" disable="false" layoutX="602.0" layoutY="377.0" mnemonicParsing="false" onAction="#pressDone" prefWidth="70.0" text="Done" />
+                <TextField fx:id="deleteFlowName" disable="false" layoutX="201.0" layoutY="117.0" prefHeight="38.0" prefWidth="471.0" promptText="Nhập tên khách muốn xoá" visible="true" />
+                <TextField fx:id="deleteFlowNumber" layoutX="201.0" layoutY="194.0" prefHeight="38.0" prefWidth="471.0" promptText="Nhập mã khách hàng muốn xoá" visible="true" />
+                <Button fx:id="doneDelete" disable="false" layoutX="602.0" layoutY="262.0" mnemonicParsing="false" onAction="#pressDelete" prefWidth="69.9998779296875" text="Delete" visible="true" />
+                <Button fx:id="doneFix" layoutX="601.0" layoutY="377.0" mnemonicParsing="false" onAction="#pressDoneFix" prefWidth="70.0" text="Done" />
+                <TextField id="CustomerNumber" fx:id="CustomerNumberOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="17.0" prefHeight="27.0" prefWidth="227.0" promptText="CustomerNumberOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="CustomerNumberNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="17.0" prefHeight="27.0" prefWidth="227.0" promptText="CustomerNumberNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="CustomerNameNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="57.0" prefHeight="27.0" prefWidth="227.0" promptText="CustomerNameNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="IdCardNameNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="97.0" prefHeight="27.0" prefWidth="227.0" promptText="IDCardNameNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="GenderNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="137.0" prefHeight="27.0" prefWidth="227.0" promptText="GenderNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="PhoneNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="177.0" prefHeight="27.0" prefWidth="227.0" promptText="PhoneNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="AddressNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="217.0" prefHeight="27.0" prefWidth="227.0" promptText="AddressNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="BirthdayNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="257.0" prefHeight="27.0" prefWidth="227.0" promptText="BirthdayNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="StartDayNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="297.0" prefHeight="27.0" prefWidth="227.0" promptText="StartDayNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="TypeNew" disable="false" editable="true" focusTraversable="true" layoutX="426.0" layoutY="337.0" prefHeight="27.0" prefWidth="227.0" promptText="TypeNew" visible="true" />
+                <TextField id="CustomerNumber" fx:id="CustomerNameOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="57.0" prefHeight="27.0" prefWidth="227.0" promptText="CustomerNameOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="IdCardNameOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="97.0" prefHeight="27.0" prefWidth="227.0" promptText="IDCardNameOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="GenderOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="137.0" prefHeight="27.0" prefWidth="227.0" promptText="GenderOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="PhoneOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="177.0" prefHeight="27.0" prefWidth="227.0" promptText="PhoneOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="AddressOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="216.0" prefHeight="27.0" prefWidth="227.0" promptText="AddressOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="BirthdayOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="257.0" prefHeight="27.0" prefWidth="227.0" promptText="BirthdayOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="StartDayOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="297.0" prefHeight="27.0" prefWidth="227.0" promptText="StartDayOld" visible="true" />
+                <TextField id="CustomerNumber" fx:id="TypeOld" disable="false" editable="true" focusTraversable="true" layoutX="177.0" layoutY="337.0" prefHeight="27.0" prefWidth="227.0" promptText="TypeOld" visible="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Quản lý điện">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Button fx:id="addNewNumberElectric" layoutX="278.0" layoutY="31.0" mnemonicParsing="false" onAction="#setAddNewNumberElectric" text="Thêm mới số điện" />
+                <Button fx:id="invoice" layoutX="66.0" layoutY="31.0" mnemonicParsing="false" onAction="#setLapHoaDon" text="Lập hoá đơn" />
+                <Button fx:id="receipt" layoutX="511.0" layoutY="31.0" mnemonicParsing="false" onAction="#setXuatHoaDon" text="Xuất hoá đơn" />
+                <TextField fx:id="maSoHoaDon" disable="false" layoutX="66.0" layoutY="109.0" prefWidth="200.0" promptText="mã số hoá đơn" visible="true" />
+                <TextField fx:id="soDienThoai" disable="false" layoutX="427.0" layoutY="109.0" prefWidth="200.0" promptText="số điện thoại" visible="true" />
+                <TextField fx:id="maSoDanCu" disable="false" layoutX="66.0" layoutY="217.0" prefWidth="200.0" promptText="mã số dân cư" visible="true" />
+                <TextField fx:id="loaiDien" disable="false" layoutX="427.0" layoutY="164.0" prefWidth="200.0" promptText="loại điện" visible="true" />
+                <TextField fx:id="tenHoDanCu" disable="false" layoutX="66.0" layoutY="164.0" onKeyPressed="#searchingName" prefWidth="200.0" promptText="tên hộ dân cư" visible="true" />
+                <TextField fx:id="soCongToCu" disable="false" layoutX="427.0" layoutY="217.0" prefWidth="200.0" promptText="số công tơ cũ" visible="true" />
+                <TextField fx:id="diaChi" disable="false" layoutX="66.0" layoutY="269.0" prefWidth="200.0" promptText="địa chỉ" visible="true" />
+                <TextField fx:id="soCongToMoi" disable="false" layoutX="427.0" layoutY="269.0" prefWidth="200.0" promptText="số công tơ mới" visible="true" />
+                <TextField fx:id="soCMND" disable="false" layoutX="66.0" layoutY="324.0" prefWidth="200.0" promptText="Số CMND" visible="true" />
+                <TextField fx:id="soTienPhaiDong" disable="false" layoutX="427.0" layoutY="324.0" prefWidth="200.0" promptText="số tiền phải đóng" visible="true" />
+                <TextField fx:id="ngayLapHoaDon" disable="false" layoutX="66.0" layoutY="377.0" prefWidth="284.0" promptText="Ngày lập hoá đơn" visible="true" />
+                <ListView fx:id="showOneName" layoutX="66.0" layoutY="190.0" onMouseClicked="#getSelection" prefHeight="27.0" prefWidth="200.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Tìm kiếm khách hàng">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="one" layoutX="80.0" layoutY="32.0" prefWidth="319.0" promptText="Tìm kiếm theo Tên khách hàng" />
+                <TextField fx:id="two" layoutX="80.0" layoutY="81.0" prefWidth="319.0" promptText="Tìm kiếm theo Mã hoá đơn" />
+                <Button fx:id="search" layoutX="470.0" layoutY="32.0" mnemonicParsing="false" onAction="#pressSearch" prefHeight="75.0" prefWidth="130.0" text="Tìm Kiếm">
+                  <font>
+                    <Font size="22.0" />
+                  </font>
+                </Button>
+                <TextArea fx:id="showInf" editable="false" layoutX="80.0" layoutY="134.0" prefHeight="268.0" prefWidth="520.0" wrapText="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Thống kê">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Text layoutX="120.0" layoutY="69.0" scaleX="1.4455021427598127" scaleY="1.8520802741067057" strokeType="OUTSIDE" strokeWidth="0.0" text="Thống kê số điện" />
+                <Text layoutX="442.0" layoutY="73.0" scaleX="1.2306925921642866" scaleY="1.8520802741067057" strokeType="OUTSIDE" strokeWidth="0.0" text="Thống kê doanh thu" />
+                <Button fx:id="baoCaoSoDien" layoutX="87.0" layoutY="388.0" mnemonicParsing="false" onAction="#pressBaoCaoSoDien" prefHeight="37.0" prefWidth="180.0" text="Báo cáo số điện" />
+                <Button fx:id="baoCaoSoTien" layoutX="427.0" layoutY="388.0" mnemonicParsing="false" onAction="#pressBaoCaoSoTien" prefHeight="37.0" prefWidth="180.0" text="Báo cáo danh thu" />
+                <LineChart id="LineChart" fx:id="lineChartSoDien" layoutX="0.0" layoutY="86.0" prefHeight="287.0" prefWidth="336.0000999999975">
+                  <xAxis>
+                    <CategoryAxis fx:id="xSoDien" side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis fx:id="ySoDien" side="LEFT" />
+                  </yAxis>
+                </LineChart>
+                <LineChart id="lineChartSoDien" fx:id="lineChartSoTien" layoutX="363.0" layoutY="86.0" prefHeight="287.0" prefWidth="336.0000999999975">
+                  <xAxis>
+                    <CategoryAxis id="xSoDien" fx:id="xSoTien" side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis id="ySoDien" fx:id="ySoTien" side="LEFT" />
+                  </yAxis>
+                </LineChart>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
